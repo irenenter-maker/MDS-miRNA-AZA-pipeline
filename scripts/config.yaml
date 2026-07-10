@@ -1,0 +1,53 @@
+working_dir: "."
+
+inputs:
+  counts: "theodora_counts.csv"
+  metadata: "experimental_conditions.csv"
+  cluster_gmt: "miRBase_Cluster_precursor.gmt"
+  family_gmt: "miRBase_Family_precursor.gmt"
+
+params:
+  sig_cut: 0.05
+  lfc_cut: 1.0
+  n_labelled: 20
+  min_count: 10
+  min_samples: 2
+
+gsea:
+  miRWalk_Pathways_mature:
+    gmt: "miRWalk_Pathways_mature.gmt"
+    volcano_stem: "Volcano_plot_miRWalk_Pathways_mature"
+    bar_stem: "Bar_plot_miRWalk_Pathways_mature"
+    enrich_stem: "Enrichment_plot_miRWalk_Pathways_mature"
+    xlsx: "plot_data_miRwalk_Pathways_mature.xlsx"
+
+  miRTarBase_mature:
+    gmt: "miRTarBase_mature.gmt"
+    volcano_stem: "Volcano_plot_miRTarBase_mature"
+    bar_stem: "Bar_plot_miRTarBase_mature"
+    enrich_stem: "Enrichment_plot_miRTarBase_mature"
+    xlsx: "plot_data_miRTarBase_mature.xlsx"
+
+  miRWalk_GO_mature:
+    gmt: "miRWalk_GO_mature.gmt"
+    volcano_stem: "Volcano_plot_miRWalk_GO_mature"
+    bar_stem: "Bar_plot_miRWalk_GO_mature"
+    enrich_stem: "Enrichment_plot_miRWalk_GO_mature"
+    xlsx: "plot_data_miRWalk_GO_mature.xlsx"
+
+  miRPathDB_GO_Biological_process_mature:
+    gmt: "miRPathDB_GO_Biological_process_mature.gmt"
+    volcano_stem: "Volcano_plot_miRPathDB_GO_Biological_process_mature"
+    bar_stem: "Bar_plot_miRPathDB_GO_Biological_process_mature"
+    enrich_stem: "Enrichment_plot_miRPathDB_GO_Biological_process_mature"
+    xlsx: "plot_data_miRPathDB_GO_Biological_process_mature.xlsx"
+
+outputs:
+  network_lfc: "Network_Plot_Final"
+  key_drivers_panel: "Figure_Panel_Key_Drivers"
+  composite_figure: "Figure_1_Composite_AZA_Response_FINAL"
+  network_clusters: "miRNA_Network_Clusters"
+  network_families: "miRNA_Network_Families"
+
+  suppl_volcano: "Supplementary_Volcano_miRNA.png"
+  suppl_top20_table: "Supplementary_Table_Top20_miRNAs.html"
